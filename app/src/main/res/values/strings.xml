@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Weather Application</string>
+    <string name="weather">Weather</string>
+    <string name="temperatureDefault">N/A</string>
+    <string name="conditionsDefault">N/A</string>
+    <string name="celsius">\u2103</string>
+    <string name="date" />
+</resources>
