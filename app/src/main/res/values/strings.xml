@@ -5,4 +5,10 @@
     <string name="conditionsDefault">N/A</string>
     <string name="celsius">\u2103</string>
     <string name="date" />
+    <string name="backButton">Back</string>
+    <string name="cityInput">Enter City</string>
+    <string name="temperatureInput">Enter temperature</string>
+    <string name="humidityInput">Enter humidity</string>
+    <string name="pressureInput">Enter pressure</string>
+    <string name="nextButton">NEXT</string>
 </resources>

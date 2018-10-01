@@ -6,50 +6,44 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/weather"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/weather"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <TextView
-        android:id="@+id/dayOfWeek"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/date"
-        android:textSize="18sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/weather" />
-    <TextView
-        android:id="@+id/weatherConditions"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/conditionsDefault"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dayOfWeek" />
-    <TextView
-        android:id="@+id/temperature"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/temperatureDefault"
-        android:textSize="50sp"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/celsius"
-        app:layout_constraintTop_toBottomOf="@+id/weatherConditions" />
+    <Button
+        android:id="@+id/nextButton"
+        android:text="@string/nextButton"
+        android:layout_width="100sp"
+        android:layout_height="50sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
-    <TextView
-        android:id="@+id/celsius"
+    <EditText
+        android:id="@+id/cityInput"
+        android:minWidth="150sp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/celsius"
-        android:textSize="16sp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/temperature"
-        app:layout_constraintTop_toBottomOf="@+id/weatherConditions" />
+        android:layout_height="50sp"
+        android:hint="@string/cityInput"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <EditText
+        android:id="@+id/temperatureInput"
+        android:minWidth="150sp"
+        android:layout_width="wrap_content"
+        android:layout_height="50sp"
+        android:hint="@string/temperatureInput"
+        app:layout_constraintTop_toBottomOf="@+id/cityInput"/>
+
+    <EditText
+        android:id="@+id/humidityInput"
+        android:minWidth="150sp"
+        android:layout_width="wrap_content"
+        android:layout_height="50sp"
+        android:hint="@string/humidityInput"
+        app:layout_constraintTop_toBottomOf="@+id/temperatureInput"/>
+
+    <EditText
+        android:id="@+id/pressureInput"
+        android:minWidth="150sp"
+        android:layout_width="wrap_content"
+        android:layout_height="50sp"
+        android:hint="@string/pressureInput"
+        app:layout_constraintTop_toBottomOf="@+id/humidityInput"/>
 
 </android.support.constraint.ConstraintLayout>
