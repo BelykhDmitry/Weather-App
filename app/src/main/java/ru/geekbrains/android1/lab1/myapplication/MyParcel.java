@@ -6,7 +6,7 @@ import android.util.Log;
 
 public class MyParcel implements Parcelable {
 
-    final static String TAG = "weatherParcel";
+    public final static String TAG = "weatherParcel";
     public String city;
     public String temperature;
     public String humidity;
