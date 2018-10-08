@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="app_name">Погодное приложение</string>
+    <string name="weather">Погода</string>
+    <string name="temperatureDefault">N/A</string>
+    <string name="conditionsDefault">N/A</string>
+    <string name="celsius">\u2103</string>
+    <string name="date" />
+    <string name="backButton">Назад</string>
+    <string name="cityInput">Введите город</string>
+    <string name="temperatureInput">Введите температуру</string>
+    <string name="humidityInput">Введите влажность</string>
+    <string name="pressureInput">Введите давление</string>
+    <string name="pressure">мм.рт.ст.</string>
+    <string name="nextButton">Далее</string>
+</resources>

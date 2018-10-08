@@ -19,7 +19,9 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_edit);
 
         TextView date = findViewById(R.id.dayOfWeek);
-        String str = Calendar.getInstance().getDisplayName(Calendar.DAY_OF_WEEK, Calendar.SHORT, Locale.ENGLISH) + " " + Calendar.getInstance().getDisplayName(Calendar.MONTH, Calendar.SHORT, Locale.ENGLISH) + " " + Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
+        String str = Calendar.getInstance().getDisplayName(Calendar.DAY_OF_WEEK, Calendar.SHORT, Locale.getDefault()) +
+                " " + Calendar.getInstance().getDisplayName(Calendar.MONTH, Calendar.SHORT, Locale.getDefault()) +
+                " " + Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
         date.setText(str);
 
         MyParcel parcel = Objects.requireNonNull(getIntent().getExtras()).getParcelable(StartSecondActivity.TEXT);
@@ -28,8 +30,8 @@ public class SecondActivity extends AppCompatActivity {
         TextView weather = findViewById(R.id.weather);
         TextView weatherConditions = findViewById(R.id.weatherConditions);
         assert parcel != null;
-        String weatherField = "Weather " + parcel.city;
-        String conditionsField = parcel.humidity + "% " + parcel.pressure + "mm";
+        String weatherField = getString(R.string.weather) + " " + parcel.city;
+        String conditionsField = parcel.humidity + "% " + parcel.pressure + " " + getString(R.string.pressure);
         weather.setText(weatherField);
         temperature.setText(parcel.temperature);
         weatherConditions.setText(conditionsField);
