@@ -1,6 +1,7 @@
 package ru.geekbrains.android1.lab1.myapplication;
 
 import android.arch.lifecycle.Observer;
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -9,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.Calendar;
@@ -62,12 +64,15 @@ public class WeatherFragment extends Fragment implements Observer {
         TextView temperature = getActivity().findViewById(R.id.temperature);
         TextView weather = getActivity().findViewById(R.id.weather);
         TextView weatherConditions = getActivity().findViewById(R.id.weatherConditions);
+        ImageView img = getActivity().findViewById(R.id.weather_background);
 
         String weatherField = getString(R.string.weather) + " " + info.city;
         String conditionsField = info.humidity + "% " + info.pressure + " " + getString(R.string.pressure);
         weather.setText(weatherField);
         temperature.setText(info.temperature);
         weatherConditions.setText(conditionsField);
+        TypedArray imgs = getResources().obtainTypedArray(R.array.Conditions);
+        img.setImageResource(imgs.getResourceId(0, -1));
     }
 
     @Override

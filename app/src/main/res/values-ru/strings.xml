@@ -22,4 +22,7 @@
         <item>Волоколамск</item>
         <item>Сочи</item>
     </string-array>
+    <string-array name="Conditions">
+        <item>@drawable/shine</item>
+    </string-array>
 </resources>
