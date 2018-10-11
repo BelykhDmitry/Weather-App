@@ -28,9 +28,10 @@ public class CitiesFragment extends ListFragment {
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
+        //getListView().setItemsCanFocus(true);
+        //getListView().setSelection(position);
         getListView().setItemChecked(position, true);
         String city = (String)l.getAdapter().getItem(position);
-
         WeatherProvider.getInstance().setCity(city);
     }
 }
