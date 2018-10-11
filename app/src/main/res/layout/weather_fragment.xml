@@ -2,17 +2,8 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="ru.geekbrains.android1.lab1.myapplication.SecondActivity">
-
-    <Button
-        android:id="@+id/backButton"
-        android:text="@string/backButton"
-        android:layout_width="100sp"
-        android:layout_height="50sp"
-        android:onClick="onClick"/>
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/weather"
@@ -59,5 +50,4 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/temperature"
         app:layout_constraintTop_toBottomOf="@+id/weatherConditions" />
-
 </android.support.constraint.ConstraintLayout>

@@ -14,4 +14,12 @@
     <string name="pressureInput">Введите давление</string>
     <string name="pressure">мм.рт.ст.</string>
     <string name="nextButton">Далее</string>
+    <string name="empty">Список городов пуст</string>
+    <string-array name="Cities">
+        <item>Москва</item>
+        <item>Санкт-Петербург</item>
+        <item>Орёл</item>
+        <item>Волоколамск</item>
+        <item>Сочи</item>
+    </string-array>
 </resources>

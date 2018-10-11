@@ -1,49 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ru.geekbrains.android1.lab1.myapplication.MainActivity">
+    android:orientation="vertical">
 
-    <Button
-        android:id="@+id/nextButton"
-        android:text="@string/nextButton"
-        android:layout_width="100sp"
-        android:layout_height="50sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+    <fragment android:name="ru.geekbrains.android1.lab1.myapplication.WeatherFragment"
+        android:id="@+id/weather_show"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0px">
+    </fragment>
 
-    <EditText
-        android:id="@+id/cityInput"
-        android:minWidth="150sp"
-        android:layout_width="wrap_content"
-        android:layout_height="50sp"
-        android:hint="@string/cityInput"
-        app:layout_constraintTop_toTopOf="parent"/>
+    <fragment android:name="ru.geekbrains.android1.lab1.myapplication.CitiesFragment"
+        android:id="@+id/cities"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0px">
+    </fragment>
 
-    <EditText
-        android:id="@+id/temperatureInput"
-        android:minWidth="150sp"
-        android:layout_width="wrap_content"
-        android:layout_height="50sp"
-        android:hint="@string/temperatureInput"
-        app:layout_constraintTop_toBottomOf="@+id/cityInput"/>
-
-    <EditText
-        android:id="@+id/humidityInput"
-        android:minWidth="150sp"
-        android:layout_width="wrap_content"
-        android:layout_height="50sp"
-        android:hint="@string/humidityInput"
-        app:layout_constraintTop_toBottomOf="@+id/temperatureInput"/>
-
-    <EditText
-        android:id="@+id/pressureInput"
-        android:minWidth="150sp"
-        android:layout_width="wrap_content"
-        android:layout_height="50sp"
-        android:hint="@string/pressureInput"
-        app:layout_constraintTop_toBottomOf="@+id/humidityInput"/>
-
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

@@ -12,4 +12,12 @@
     <string name="pressureInput">Enter pressure</string>
     <string name="pressure">mm</string>
     <string name="nextButton">NEXT</string>
+    <string name="empty">Empty cities list</string>
+    <string-array name="Cities">
+        <item>Moscow</item>
+        <item>Saint-Petersburg</item>
+        <item>Orel</item>
+        <item>Volokolamsk</item>
+        <item>Sochi</item>
+    </string-array>
 </resources>
