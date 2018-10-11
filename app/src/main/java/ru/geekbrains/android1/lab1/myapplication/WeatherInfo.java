@@ -9,10 +9,10 @@ import java.io.Serializable;
 public class WeatherInfo implements Serializable {
 
     private final static String TAG = "weatherInfo";
-    public final String city;
-    public final String temperature;
-    public final String humidity;
-    public final String pressure;
+    private final String city;
+    private final String temperature;
+    private final String humidity;
+    private final String pressure;
 
     public WeatherInfo(String city, String temperature, String humidity, String pressure) {
         Log.d(TAG, "WeatherInfo create");
@@ -20,5 +20,21 @@ public class WeatherInfo implements Serializable {
         this.temperature = temperature;
         this.humidity = humidity;
         this.pressure = pressure;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getTemperature() {
+        return temperature;
+    }
+
+    public String getHumidity() {
+        return humidity;
+    }
+
+    public String getPressure() {
+        return pressure;
     }
 }

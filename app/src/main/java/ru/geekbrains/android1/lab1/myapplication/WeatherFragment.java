@@ -66,10 +66,10 @@ public class WeatherFragment extends Fragment implements Observer {
         TextView weatherConditions = getActivity().findViewById(R.id.weatherConditions);
         ImageView img = getActivity().findViewById(R.id.weather_background);
 
-        String weatherField = getString(R.string.weather) + " " + info.city;
-        String conditionsField = info.humidity + "% " + info.pressure + " " + getString(R.string.pressure);
+        String weatherField = getString(R.string.weather) + " " + info.getCity();
+        String conditionsField = info.getHumidity() + "% " + info.getPressure() + " " + getString(R.string.pressure);
         weather.setText(weatherField);
-        temperature.setText(info.temperature);
+        temperature.setText(info.getTemperature());
         weatherConditions.setText(conditionsField);
         TypedArray imgs = getResources().obtainTypedArray(R.array.Conditions);
         img.setImageResource(imgs.getResourceId(0, -1));
