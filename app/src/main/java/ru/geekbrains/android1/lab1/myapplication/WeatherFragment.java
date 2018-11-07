@@ -77,9 +77,20 @@ public class WeatherFragment extends Fragment implements Observer {
 
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
+        Log.i(TAG, "onSaveInstanceState");
         super.onSaveInstanceState(outState);
         outState.putSerializable(TAG, info);
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.i(TAG, "onResume()");
+    }
 
+    @Override
+    public void onPause() {
+        super.onPause();
+        Log.i(TAG, "onPause()");
+    }
 }

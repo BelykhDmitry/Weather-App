@@ -21,9 +21,19 @@
         <item>Орёл</item>
         <item>Волоколамск</item>
         <item>Сочи</item>
+        <item>Сочи</item>
+        <item>Сочи</item>
+        <item>Сочи</item>
+        <item>Сочи</item>
+        <item>Сочи</item>
+        <item>Сочи</item>
+        <item>Сочи</item>
+        <item>Сочи</item>
     </string-array>
     <string-array name="Conditions">
         <item>@drawable/shine</item>
         <item>@drawable/cloudy</item>
     </string-array>
+    <string name="weatherInfoSource">www.worldweatheronline.com</string>
+    <string name="about">Это погодное приложение было создано Дмитрием Белых в учебных целях.\n Поставщик погодной информации - </string>
 </resources>

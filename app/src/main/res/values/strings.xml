@@ -19,9 +19,19 @@
         <item>Orel</item>
         <item>Volokolamsk</item>
         <item>Sochi</item>
+        <item>Sochi</item>
+        <item>Sochi</item>
+        <item>Sochi</item>
+        <item>Sochi</item>
+        <item>Sochi</item>
+        <item>Sochi</item>
+        <item>Sochi</item>
+        <item>Sochi</item>
     </string-array>
     <string-array name="Conditions">
         <item>@drawable/shine</item>
         <item>@drawable/cloudy</item>
     </string-array>
+    <string name="weatherInfoSource">www.worldweatheronline.com</string>
+    <string name="about">This weather app was created by Dmitrii Belykh for education purposes.\n Weather info provider is %s</string>
 </resources>
