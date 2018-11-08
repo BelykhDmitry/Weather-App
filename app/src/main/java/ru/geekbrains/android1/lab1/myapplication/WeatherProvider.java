@@ -49,7 +49,7 @@ public class WeatherProvider {
                     fireListeners();
                     Log.i(TAG, "response OK");
                 } else {
-                    Log.i(TAG, "response NotOK");
+                    Log.i(TAG, "response "+response.isSuccessful() + ": " + response.message());
                 }
 
                 // Через Picasso загрузить иконку http://openweathermap.org/img/w/10d.png
@@ -58,7 +58,7 @@ public class WeatherProvider {
             @Override
             public void onFailure(Call<CurrentWeather> call, Throwable t) {
                 // Подумать, как вывести тост с ошибкой
-                Log.i(TAG, "response Fail");
+                Log.i(TAG, "response Fail:" + t.getMessage());
             }
         });
 
