@@ -2,18 +2,28 @@ package ru.geekbrains.android1.lab1.myapplication;
 
 import android.arch.lifecycle.Observer;
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import ru.geekbrains.android1.lab1.myapplication.Model.WeatherDownloader;
+import ru.geekbrains.android1.lab1.myapplication.Model.CurrentWeather;
+
 public class WeatherProvider {
+
+    private final String TAG = this.getClass().getSimpleName();
+
+    private final String WEATHER_IMG_ADDRESS = "http://openweathermap.org/img/w/";
 
     private static WeatherProvider instance = null;
 
     private WeatherInfo info = null;
-    private String city = null;
 
-    private List<Observer> observers = new ArrayList<Observer>();
+    private List<Observer> observers = new ArrayList<>();
 
     private WeatherProvider() {}
 
@@ -24,9 +34,34 @@ public class WeatherProvider {
     }
 
     public void setCity(String city) {
-        this.city = city;
-        info = new WeatherInfo(city, "15", "55", "750");
-        fireListeners();
+        WeatherDownloader.getInstance().initRetrofit();
+        WeatherDownloader.getInstance().requestRetrofit(city, new Callback<CurrentWeather>() {
+            @Override
+            public void onResponse(Call<CurrentWeather> call, Response<CurrentWeather> response) {
+                if(response.body() != null) {
+                    CurrentWeather currentWeather = response.body();
+                    String imgAddr = WEATHER_IMG_ADDRESS + currentWeather.getWeather()[0].getIcon() + ".png";
+                    info = new WeatherInfo(currentWeather.getName(),
+                            String.valueOf(currentWeather.getMain().getTemp()),
+                            String.valueOf(currentWeather.getMain().getHumidity()),
+                            String.format("%.2f",currentWeather.getMain().getPressure()/1.333),
+                            imgAddr);
+                    fireListeners();
+                    Log.i(TAG, "response OK");
+                } else {
+                    Log.i(TAG, "response NotOK");
+                }
+
+                // Через Picasso загрузить иконку http://openweathermap.org/img/w/10d.png
+            }
+
+            @Override
+            public void onFailure(Call<CurrentWeather> call, Throwable t) {
+                // Подумать, как вывести тост с ошибкой
+                Log.i(TAG, "response Fail");
+            }
+        });
+
     }
 
     @NonNull

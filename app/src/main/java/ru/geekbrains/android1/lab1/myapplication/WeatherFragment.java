@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.Calendar;
 import java.util.Locale;
 import java.util.Objects;
@@ -73,6 +75,11 @@ public class WeatherFragment extends Fragment implements Observer {
         weatherConditions.setText(conditionsField);
         TypedArray imgs = getResources().obtainTypedArray(R.array.Conditions);
         img.setImageResource(imgs.getResourceId(0, -1));
+
+        ImageView weatherImage = getActivity().findViewById(R.id.weatherImage);
+        Picasso.with(getActivity())
+                .load(info.getImage())
+                .into(weatherImage);
     }
 
     @Override

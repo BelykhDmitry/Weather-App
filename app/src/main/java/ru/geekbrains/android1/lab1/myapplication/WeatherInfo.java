@@ -13,13 +13,21 @@ public class WeatherInfo implements Serializable {
     private final String temperature;
     private final String humidity;
     private final String pressure;
+    private final String image;
 
-    public WeatherInfo(String city, String temperature, String humidity, String pressure) {
+    enum AnswerStatus {
+        OK, FAIL
+    }
+
+    // Добавить статус (enum?)
+
+    public WeatherInfo(String city, String temperature, String humidity, String pressure, String img) {
         Log.d(TAG, "WeatherInfo create");
         this.city = city;
         this.temperature = temperature;
         this.humidity = humidity;
         this.pressure = pressure;
+        this.image = img;
     }
 
     public String getCity() {
@@ -36,5 +44,9 @@ public class WeatherInfo implements Serializable {
 
     public String getPressure() {
         return pressure;
+    }
+
+    public String getImage() {
+        return image;
     }
 }
