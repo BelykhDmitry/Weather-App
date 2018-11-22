@@ -11,7 +11,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import ru.geekbrains.android1.lab1.myapplication.Model.WeatherDownloader;
-import ru.geekbrains.android1.lab1.myapplication.Model.CurrentWeather;
+import ru.geekbrains.android1.lab1.myapplication.Model.WeatherRequest.CurrentWeather;
 
 public class WeatherProvider {
 

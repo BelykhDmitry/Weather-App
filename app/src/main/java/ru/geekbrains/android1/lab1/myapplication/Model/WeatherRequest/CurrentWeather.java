@@ -1,4 +1,4 @@
-package ru.geekbrains.android1.lab1.myapplication.Model;
+package ru.geekbrains.android1.lab1.myapplication.Model.WeatherRequest;
 
 
 import com.google.gson.annotations.Expose;

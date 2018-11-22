@@ -64,7 +64,7 @@ public class WeatherFragment extends Fragment implements Observer {
         Log.i(TAG, "onChanged()");
         info = (WeatherInfo)o;
         TextView temperature = getActivity().findViewById(R.id.temperature);
-        TextView weather = getActivity().findViewById(R.id.weather);
+        TextView weather = getActivity().findViewById(R.id.location);
         TextView weatherConditions = getActivity().findViewById(R.id.weatherConditions);
         ImageView img = getActivity().findViewById(R.id.weather_background);
 

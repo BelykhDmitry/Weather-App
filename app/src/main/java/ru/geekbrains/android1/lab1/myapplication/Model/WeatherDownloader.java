@@ -3,6 +3,7 @@ package ru.geekbrains.android1.lab1.myapplication.Model;
 import retrofit2.Callback;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import ru.geekbrains.android1.lab1.myapplication.Model.WeatherRequest.CurrentWeather;
 import ru.geekbrains.android1.lab1.myapplication.OpenWeather.OpenWeather;
 
 public class WeatherDownloader {
