@@ -13,7 +13,9 @@ import ru.geekbrains.android1.lab1.myapplication.Model.InteractorImpl;
 import ru.geekbrains.android1.lab1.myapplication.Model.WeatherDataAdapter;
 import ru.geekbrains.android1.lab1.myapplication.Model.WeatherDataAdapterImpl;
 import ru.geekbrains.android1.lab1.myapplication.Presenter.CitiesViewPresenter;
+import ru.geekbrains.android1.lab1.myapplication.Presenter.CitiesViewPresenterImpl;
 import ru.geekbrains.android1.lab1.myapplication.Presenter.WeatherViewPresenter;
+import ru.geekbrains.android1.lab1.myapplication.Presenter.WeatherViewPresenterImpl;
 import ru.geekbrains.android1.lab1.myapplication.View.CitiesView;
 import ru.geekbrains.android1.lab1.myapplication.View.CitiesViewImpl;
 import ru.geekbrains.android1.lab1.myapplication.View.WeatherView;
@@ -42,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
         WeatherView weatherView = new WeatherViewImpl(this);
         WeatherDataAdapter weatherDataAdapter = new WeatherDataAdapterImpl();
         ArrayAdapter<String> citiesAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_activated_1, new ArrayList<>());
+        citiesViewPresenter = new CitiesViewPresenterImpl();
+        weatherViewPresenter = new WeatherViewPresenterImpl(weatherDataAdapter, weatherView, interactor);
     }
 
 }

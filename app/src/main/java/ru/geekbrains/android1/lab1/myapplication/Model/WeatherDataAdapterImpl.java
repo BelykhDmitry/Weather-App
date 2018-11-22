@@ -10,6 +10,7 @@ public class WeatherDataAdapterImpl implements WeatherDataAdapter {
     private String date;
     private String location;
 
+    @Override
     public void setEntity(CurrentWeather weather){        // Parse weather, get Date from calendar
     }
 
