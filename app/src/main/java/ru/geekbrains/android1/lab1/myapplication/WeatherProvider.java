@@ -6,6 +6,7 @@ import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -44,7 +45,7 @@ public class WeatherProvider {
                     info = new WeatherInfo(currentWeather.getName(),
                             String.valueOf(currentWeather.getMain().getTemp()),
                             String.valueOf(currentWeather.getMain().getHumidity()),
-                            String.format("%.2f",currentWeather.getMain().getPressure()/1.333),
+                            String.format(Locale.getDefault(), "%.2f",currentWeather.getMain().getPressure()/1.333),
                             imgAddr);
                     fireListeners();
                     Log.i(TAG, "response OK");
