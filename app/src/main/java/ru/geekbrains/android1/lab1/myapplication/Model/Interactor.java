@@ -6,4 +6,5 @@ public interface Interactor {
     CurrentWeather getEntity(); //Тут тоже вопрос. Не универсально
     void subscribe(OnDataChangedListener listener);
     void unsubscribe(OnDataChangedListener listener);
+    void onDestroy();
 }

@@ -21,7 +21,9 @@ import ru.geekbrains.android1.lab1.myapplication.View.CitiesViewImpl;
 import ru.geekbrains.android1.lab1.myapplication.View.WeatherView;
 import ru.geekbrains.android1.lab1.myapplication.View.WeatherViewImpl;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements InteractorProvider {
+
+    private Interactor interactor;
 
     CitiesViewPresenter citiesViewPresenter;
     WeatherViewPresenter weatherViewPresenter;
@@ -36,6 +38,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //init();
+
+        interactor = new InteractorImpl();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        interactor.onDestroy();
+        interactor = null;
     }
 
     private void init() {
@@ -48,4 +60,8 @@ public class MainActivity extends AppCompatActivity {
         weatherViewPresenter = new WeatherViewPresenterImpl(weatherDataAdapter, weatherView, interactor);
     }
 
+    @Override
+    public Interactor getInteractor() {
+        return interactor;
+    }
 }

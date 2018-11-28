@@ -22,4 +22,9 @@ public class InteractorImpl implements Interactor {
     public void unsubscribe(OnDataChangedListener listener) {
         listeners.remove(listener);
     }
+
+    @Override
+    public void onDestroy() {
+        // Close all processes with DB
+    }
 }

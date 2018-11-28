@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,11 +20,20 @@ import java.util.Calendar;
 import java.util.Locale;
 import java.util.Objects;
 
+import ru.geekbrains.android1.lab1.myapplication.Model.WeatherDataAdapter;
+import ru.geekbrains.android1.lab1.myapplication.Model.WeatherDataAdapterImpl;
+import ru.geekbrains.android1.lab1.myapplication.Presenter.WeatherViewPresenter;
+import ru.geekbrains.android1.lab1.myapplication.Presenter.WeatherViewPresenterImpl;
+import ru.geekbrains.android1.lab1.myapplication.View.WeatherView;
+import ru.geekbrains.android1.lab1.myapplication.View.WeatherViewImpl;
+
 
 public class WeatherFragment extends Fragment implements Observer {
 
     private static final String TAG = "WeatherFragment";
     private WeatherInfo info;
+
+    private WeatherViewPresenter presenter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -33,6 +43,10 @@ public class WeatherFragment extends Fragment implements Observer {
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        WeatherView weatherView = new WeatherViewImpl(getActivity());
+        WeatherDataAdapter weatherDataAdapter = new WeatherDataAdapterImpl();
+        presenter = new WeatherViewPresenterImpl(weatherDataAdapter, weatherView, ((InteractorProvider)Objects.requireNonNull(getActivity())).getInteractor()); // TODO Будет ли так работать
+
         Log.i(TAG, "onActivityCreated()");
         WeatherProvider.getInstance().subscribe(this);
         super.onActivityCreated(savedInstanceState);
